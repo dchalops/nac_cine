@@ -13,7 +13,5 @@ namespace cine_acceso_datos.Entidados
         public string numeroAsiento { get; set; }
         public bool estadoLogico { get; set; }
 
-
-
     }
 }
