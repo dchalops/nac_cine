@@ -75,7 +75,6 @@ namespace cine_acceso_datos.DAO
             conexionDB.CerrarConexion();
         }
 
-
     }
 }
 
