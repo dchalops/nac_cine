@@ -42,15 +42,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionDB.cs" />
+    <Compile Include="DAO\AsientoDAO.cs" />
     <Compile Include="DAO\ClientesDAO.cs" />
     <Compile Include="DAO\DireccionesDAO.cs" />
     <Compile Include="DAO\entradasDAO.cs" />
+    <Compile Include="DAO\EventoDAO.cs" />
     <Compile Include="DAO\FacturaDAO.cs" />
     <Compile Include="DAO\Inventario_AsientosDAO.cs" />
     <Compile Include="DAO\metodopagoDAO.cs" />
     <Compile Include="DAO\PedidoDAO.cs" />
     <Compile Include="DAO\peliculasDAO.cs" />
     <Compile Include="DAO\programacionDAO.cs" />
+    <Compile Include="DAO\SalaDAO.cs" />
     <Compile Include="DAO\stock_peliculasDAO.cs" />
     <Compile Include="Entidades\Asiento.cs" />
     <Compile Include="Entidades\Clientes.cs" />
