@@ -11,6 +11,11 @@ namespace Cine_logica_negocio
 {
     public class Inventario_AsientosLogica
     {
+
+
+
+
+
         private Inventario_AsientosDAO inventario_asientosDAO = new Inventario_AsientosDAO();
         public int InsertarInventario_Asientos(inventario_asientos inventario_asientos)
         {
