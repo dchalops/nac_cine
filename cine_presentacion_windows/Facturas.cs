@@ -32,6 +32,35 @@ namespace cine_presentacion_windows
                 DataTable facturas = facturasLogica.MostrarFacturas();
                 dataGridView1.DataSource = facturas;
 
+                foreach (DataGridViewColumn column in dataGridView1.Columns)
+                {
+                    switch (column.Name)
+                    {
+                        case "id_factura":
+                            column.HeaderText = "ID";
+                            break;
+                        case "fecha":
+                            column.HeaderText = "Fecha";
+                            break;
+                        case "total":
+                            column.HeaderText = "Total";
+                            break;
+                        case "id_cliente":
+                            column.HeaderText = "ID Cliente";
+                            break;
+                        case "id_metodo_pago":
+                            column.HeaderText = "Método Pago";
+                            break;
+                        case "autorizacion_sri":
+                            column.HeaderText = "Autorización SRI";
+                            break;
+                        case "estado_factura":
+                            column.HeaderText = "Estado Factura";
+                            break;
+                                
+                    }
+                }
+
             }
             catch (Exception ex)
             {
