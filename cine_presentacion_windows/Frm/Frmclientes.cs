@@ -15,10 +15,12 @@ namespace cine_presentacion_windows.Frm
     public partial class Frmclientes : Form
     {
         private Clientes cliente;
+        private ClientesLogica clientesLogica;
         public Frmclientes()
         {
             InitializeComponent();
             cliente = new Clientes();
+            clientesLogica = new ClientesLogica();
         }
         private void insertarClientes()
         {
@@ -27,11 +29,20 @@ namespace cine_presentacion_windows.Frm
             cliente.doc_identidad = txtcedula.Text;
             cliente.telefono = txtelefono.Text;
             cliente.email = txtemail.Text;
+
+            if (clientesLogica.InsertarClientes(cliente))
+            {
+                MessageBox.Show("cliente insertado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("ERROR: Al intentar registrar cliente");
+            }
         }
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
+            insertarClientes();
         }
     }
 }

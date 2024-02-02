@@ -58,6 +58,18 @@
     <Compile Include="Frm\Frmclientes.Designer.cs">
       <DependentUpon>Frmclientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\Frmentradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Frmentradas.Designer.cs">
+      <DependentUpon>Frmentradas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm\Frmprogramacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\Frmprogramacion.Designer.cs">
+      <DependentUpon>Frmprogramacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Facturas.resx">

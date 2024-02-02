@@ -12,11 +12,11 @@ namespace cine_logica_negocio
     public class ClientesLogica
     {
         private ClientesDAO clientesDao = new ClientesDAO();
-        public int InsertarClientes(Clientes cliente)
+        public Boolean InsertarClientes(Clientes cliente)
         {
             clientesDao.InsertarClientes(cliente);
             DataTable resultado = clientesDao.BuscarClienteCI(cliente.doc_identidad);
-            return int.Parse(resultado.Rows[0]["id_cliente"].ToString());
+            return Boolean.Parse(resultado.Rows[0]["id_cliente"].ToString());
         }
         public DataTable ListarCliente()
         {
