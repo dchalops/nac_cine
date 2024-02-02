@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos.Designer.cs">
+      <DependentUpon>Asientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones.Designer.cs">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facturas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Asientos.resx">
+      <DependentUpon>Asientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones.resx">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cine_acceso_datos\cine_acceso_datos.csproj">
+      <Project>{F50E5A3A-B013-4614-A0CE-7C414706A85D}</Project>
+      <Name>cine_acceso_datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\cine_logica_negocio\cine_logica_negocio.csproj">
       <Project>{c0065422-328c-442c-a05b-07793ec28885}</Project>
       <Name>cine_logica_negocio</Name>
