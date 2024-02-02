@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cine_presentacion_windows.Frm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace cine_presentacion_windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facturas());
+            Application.Run(new Frmclientes());
         }
     }
 }
