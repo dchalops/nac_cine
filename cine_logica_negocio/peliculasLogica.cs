@@ -15,6 +15,7 @@ namespace Cine_logica_negocio
 
         public bool Insertarpeliculas(peliculas nuevapelicula)
         {
+
             peliculasDAO.insertarpeliculas(nuevapelicula);
             return true;
         }

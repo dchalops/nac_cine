@@ -24,6 +24,8 @@ namespace cine_presentacion_windows
             stock_Peliculas = new stock_peliculas();
             stockpeliculasLogica = new stockpeliculasLogica();
         }
+
+
         private void insertarstockpeliculas()
         {
             stock_Peliculas.cantidad= txtCantidad.Text;

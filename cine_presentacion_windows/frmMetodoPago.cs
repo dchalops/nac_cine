@@ -24,6 +24,7 @@ namespace cine_presentacion_windows
             Metodo_De_Pago = new metodo_de_pago();  
             MetodopagoLogica = new metodopagoLogica();
         }
+
          private void Insertarmetodo_de_pago()
         {
             Metodo_De_Pago.tipo = txtTipoPago.Text;

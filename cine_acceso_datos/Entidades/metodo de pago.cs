@@ -11,6 +11,7 @@ namespace cine_acceso_datos.Entidades
         public int id_metodo_pago { get; set; }
         public string tipo { get; set; }
         public string detalles { get; set; }
+
         public DateTime fecha_expiracion { get; set; }
         public string estado_logico { get; set; }
 

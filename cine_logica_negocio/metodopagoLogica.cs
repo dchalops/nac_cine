@@ -13,7 +13,12 @@ namespace Cine_logica_negocio
     {
         private metodopagoDAO metodopagoDAO = new metodopagoDAO();
 
+<<<<<<< Updated upstream
         public bool Insertarmetodo_de_pago(metodo_de_pago nuevometododepago)
+=======
+
+        public Boolean Insertarmetodo_de_pago(metodo_de_pago nuevometododepago)
+>>>>>>> Stashed changes
         {
             metodopagoDAO.Insertarmetodo_de_pago(nuevometododepago);
             return true;

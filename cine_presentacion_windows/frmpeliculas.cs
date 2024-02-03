@@ -42,7 +42,9 @@ namespace cine_presentacion_windows
             {
                 MessageBox.Show("Error al intentar ingresar película");
             }
+
         }
+
         private void listarpelicula()
         {
             dgvPeliculas.DataSource= peliculasLogica.listarpelicula();  
