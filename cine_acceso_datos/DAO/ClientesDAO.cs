@@ -88,6 +88,34 @@ namespace cine_acceso_datos.DAO
             ejecutarConsulta.Parameters.Clear();
             conexionDB.CerrarConexion();
         }
-       
+        
+        public List<Clientes> findAll()
+        {
+            List<Clientes> clientes = new List<Clientes>();
+            try
+            {
+                ejecutarConsulta.Connection = conexionDB.AbrirConexion();
+                ejecutarConsulta.CommandText = "Select * from clientes";
+                ejecutarSql = ejecutarConsulta.ExecuteReader();
+                while (ejecutarSql.Read())
+                {
+                    Clientes cliente = new Clientes();
+                    cliente.id_cliente = ejecutarSql.GetInt32(0);
+                    cliente.nombre = ejecutarSql.GetString(1);
+                    cliente.apellido = ejecutarSql.GetString(2);
+                    cliente.email = ejecutarSql.GetString(3);
+                    cliente.telefono = ejecutarSql.GetString(4);
+                    cliente.estado = ejecutarSql.GetBoolean(5);
+                    cliente.doc_identidad = ejecutarSql.GetString(6);
+                    clientes.Add(cliente);
+                }
+                conexionDB.CerrarConexion();
+                return clientes;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al listar clientes: " + ex.Message);
+            }
+        }   
     }
 }

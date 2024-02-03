@@ -1,4 +1,5 @@
 ﻿using cine_logica_negocio;
+using clinica_presentacion_windows;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace cine_presentacion_windows
     public partial class Facturas : Form
     {
         private FacturasLogica facturasLogica = new FacturasLogica();
+
         public Facturas()
         {
             InitializeComponent();
             facturasLogica = new FacturasLogica();
+            
         }
 
         private void Facturas_Load(object sender, EventArgs e)
@@ -57,10 +60,8 @@ namespace cine_presentacion_windows
                         case "estado_factura":
                             column.HeaderText = "Estado Factura";
                             break;
-                                
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -68,9 +69,10 @@ namespace cine_presentacion_windows
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new FacturaAgregar().ShowDialog();
         }
     }
 }

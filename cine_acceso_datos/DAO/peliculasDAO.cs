@@ -68,5 +68,34 @@ namespace cine_acceso_datos.DAO
                 throw new Exception("Error: No se puede buscar información" + ex.ToString());
             }
         }
+
+        public List<peliculas> findAll()
+        {
+            List<peliculas> lista = new List<peliculas>();
+            try
+            {
+                ejecutarConsulta.Connection = conexionDB.AbrirConexion();
+                ejecutarConsulta.CommandText = "Select * from peliculas";
+                ejecutarSql = ejecutarConsulta.ExecuteReader();
+                while (ejecutarSql.Read())
+                {
+                    lista.Add(new peliculas
+                    {
+                        id_pelicula = ejecutarSql.GetInt32(0),
+                        titulo = ejecutarSql.GetString(1),
+                        duracion = ejecutarSql.GetInt32(2),
+                        sinopsis = ejecutarSql.GetString(3),
+                        trailer_url = ejecutarSql.GetString(4),
+                        estado_logico = ejecutarSql.GetBoolean(5)
+                    });
+                }
+                conexionDB.CerrarConexion();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se puede listar información" + ex.ToString());
+            }
+        }   
     }
 }

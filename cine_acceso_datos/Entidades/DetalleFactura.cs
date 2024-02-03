@@ -13,6 +13,6 @@ namespace cine_acceso_datos.Entidades
         public int IdEntrada { get; set; }
         public decimal Precio { get; set; }
         public int Cantidad { get; set; }
-        public string EstadoLogico { get; set; }
+        public bool EstadoLogico { get; set; }
     }
 }

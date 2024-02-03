@@ -12,9 +12,9 @@ namespace cine_acceso_datos.Entidades
         public int IdCliente { get; set; }
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
-        public string IdMetodoPago { get; set; }
+        public int IdMetodoPago { get; set; }
         public string AutorizacionSri { get; set; }
         public string EstadoFactura { get; set; }
-        public string EstadoLogico { get; set; }
+        public bool EstadoLogico { get; set; }
     }
 }

@@ -48,44 +48,38 @@ namespace cine_acceso_datos.DAO
             {
                 using (SqlConnection conexion = conexionDB.AbrirConexion())
                 {
-                    using (SqlCommand ejecutarConsulta = new SqlCommand())
+                    using (SqlTransaction transaccion = conexion.BeginTransaction())
                     {
-                        ejecutarConsulta.Connection = conexion;
-
-                        using (SqlTransaction transaccion = conexion.BeginTransaction())
+                        string comandoFactura = "INSERT INTO facturas (id_cliente, fecha, total, id_metodo_pago, autorizacion_sri, estado_factura, estado_logico) VALUES (@idCliente, @fecha, @total, @idMetodoPago, @autorizacionSri, @estadoFactura, @estadoLogico); SELECT SCOPE_IDENTITY();";
+                        using (SqlCommand ejecutarConsulta = new SqlCommand(comandoFactura, conexion, transaccion))
                         {
-                            ejecutarConsulta.Transaction = transaccion;
+                            ejecutarConsulta.Parameters.AddWithValue("@idCliente", factura.IdCliente);
+                            ejecutarConsulta.Parameters.AddWithValue("@fecha", factura.Fecha);
+                            ejecutarConsulta.Parameters.AddWithValue("@total", factura.Total);
+                            ejecutarConsulta.Parameters.AddWithValue("@idMetodoPago", factura.IdMetodoPago);
+                            ejecutarConsulta.Parameters.AddWithValue("@autorizacionSri", factura.AutorizacionSri);
+                            ejecutarConsulta.Parameters.AddWithValue("@estadoFactura", factura.EstadoFactura);
+                            ejecutarConsulta.Parameters.AddWithValue("@estadoLogico", factura.EstadoLogico);
 
-                            ejecutarConsulta.CommandText = "spInsertarFactura";
-                            ejecutarConsulta.CommandType = CommandType.StoredProcedure;
-                            ejecutarConsulta.Parameters.AddWithValue("@IdCliente", factura.IdCliente);
-                            ejecutarConsulta.Parameters.AddWithValue("@Fecha", factura.Fecha);
-                            ejecutarConsulta.Parameters.AddWithValue("@Total", factura.Total);
-                            ejecutarConsulta.Parameters.AddWithValue("@IdMetodoPago", factura.IdMetodoPago);
-                            ejecutarConsulta.Parameters.AddWithValue("@AutorizacionSri", factura.AutorizacionSri);
-                            ejecutarConsulta.Parameters.AddWithValue("@EstadoFactura", factura.EstadoFactura);
-                            ejecutarConsulta.Parameters.AddWithValue("@EstadoLogico", factura.EstadoLogico);
-                            
-                            ejecutarConsulta.ExecuteNonQuery();
-
-                            int idFactura = Convert.ToInt32(ejecutarConsulta.Parameters["@IdFactura"].Value);
-                            ejecutarConsulta.Parameters.Clear();
+                            int idFacturaNuevo = Convert.ToInt32(ejecutarConsulta.ExecuteScalar());
 
                             foreach (var detalle in detalles)
                             {
-                                ejecutarConsulta.CommandText = "spInsertarDetalleFactura";
-                                ejecutarConsulta.CommandType = CommandType.StoredProcedure;
-                                ejecutarConsulta.Parameters.Clear();
-                                ejecutarConsulta.Parameters.AddWithValue("@IdFactura", idFactura);
-                                ejecutarConsulta.Parameters.AddWithValue("@IdEntrada", detalle.IdEntrada);
-                                ejecutarConsulta.Parameters.AddWithValue("@Precio", detalle.Precio);
-                                ejecutarConsulta.Parameters.AddWithValue("@Cantidad", detalle.Cantidad);
-                                ejecutarConsulta.Parameters.AddWithValue("@EstadoLogico", detalle.EstadoLogico);
-                                
-                                ejecutarConsulta.ExecuteNonQuery();
+                                string comandoDetalle = "INSERT INTO detalle_factura (id_factura, id_entrada, precio, cantidad, estado_logico) VALUES (@IdFacturaNuevo, @idEntrada, @precio, @cantidad, @estadoLogicoDetalle);";
+                                using (SqlCommand ejecutarDetalle = new SqlCommand(comandoDetalle, conexion, transaccion))
+                                {
+                                    ejecutarDetalle.Parameters.AddWithValue("@IdFacturaNuevo", idFacturaNuevo);
+                                    ejecutarDetalle.Parameters.AddWithValue("@idEntrada", detalle.IdEntrada);
+                                    ejecutarDetalle.Parameters.AddWithValue("@precio", detalle.Precio);
+                                    ejecutarDetalle.Parameters.AddWithValue("@cantidad", detalle.Cantidad);
+                                    ejecutarDetalle.Parameters.AddWithValue("@estadoLogicoDetalle", detalle.EstadoLogico);
+
+                                    ejecutarDetalle.ExecuteNonQuery();
+                                }
                             }
 
                             transaccion.Commit();
+                            return;
                         }
                     }
                 }
@@ -94,8 +88,9 @@ namespace cine_acceso_datos.DAO
             {
                 throw new Exception("Error al insertar factura y detalles: " + ex.Message);
             }
-            
         }
+
+
 
         public void EditarFacturaConDetalles(int idFactura, List<Entidades.DetalleFactura> detallesEditados)
         {

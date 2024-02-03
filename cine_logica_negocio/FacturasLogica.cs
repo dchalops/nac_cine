@@ -12,12 +12,24 @@ namespace cine_logica_negocio
     public class FacturasLogica
     {
         private FacturaDAO facturaDAO = new FacturaDAO();
+        private ClientesDAO clientesDAO = new ClientesDAO();
+        private peliculasDAO peliculasDAO = new peliculasDAO();
 
         public DataTable MostrarFacturas()
         {
             
             return facturaDAO.MostrarFactura();
 
+        }
+
+        public List<Clientes> Clientes()
+        {
+            return clientesDAO.findAll();
+        }
+
+        public List<peliculas> Productos()
+        {
+            return peliculasDAO.findAll();
         }
 
         public void InsertarFacturaConDetalles(Factura factura, List<DetalleFactura> detalles)

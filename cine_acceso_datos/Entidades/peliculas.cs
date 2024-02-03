@@ -13,7 +13,7 @@ namespace cine_acceso_datos.Entidades
         public int duracion { get; set; }
         public string sinopsis { get; set; }
         public string trailer_url { get; set; }
-        public string estado_logico { get; set; }    
+        public bool estado_logico { get; set; }    
         
     }
 }
