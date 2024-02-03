@@ -52,6 +52,12 @@
     <Compile Include="Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\FrmAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmAsientos.Designer.cs">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm\Frmclientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,16 +70,31 @@
     <Compile Include="Frm\Frmentradas.Designer.cs">
       <DependentUpon>Frmentradas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\FrmEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmEventos.Designer.cs">
+      <DependentUpon>FrmEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm\Frmprogramacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm\Frmprogramacion.Designer.cs">
       <DependentUpon>Frmprogramacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm\FrmSalas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm\FrmSalas.Designer.cs">
+      <DependentUpon>FrmSalas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmAsientos.resx">
+      <DependentUpon>FrmAsientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\Frmclientes.resx">
       <DependentUpon>Frmclientes.cs</DependentUpon>
@@ -81,8 +102,14 @@
     <EmbeddedResource Include="Frm\Frmentradas.resx">
       <DependentUpon>Frmentradas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmEventos.resx">
+      <DependentUpon>FrmEventos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm\Frmprogramacion.resx">
       <DependentUpon>Frmprogramacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm\FrmSalas.resx">
+      <DependentUpon>FrmSalas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

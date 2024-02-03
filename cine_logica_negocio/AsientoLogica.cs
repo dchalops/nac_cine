@@ -5,9 +5,9 @@ using System.Data;
 
 namespace cine_logica_negocio
 {
-    internal class AsientoLogica
+    public class AsientoLogica
     {
-        private AsientoDAO asientoDAO = new AsientoDAO();
+        public AsientoDAO asientoDAO = new AsientoDAO();
 
         public bool InsertarAsiento(Asiento nuevoAsiento)
         {

@@ -14,6 +14,6 @@ namespace cine_acceso_datos.Entidades
         public string descripcion { get; set; }
         public string trailerUrl { get; set; }
         public int idPelicula { get; set; }
-        public string estadoLogico { get; set; }
+        public bool estadoLogico { get; set; }
     }
 }

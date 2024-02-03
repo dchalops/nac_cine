@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CineLogicaNegocio
 {
-    internal class EventoLogica
+    public class EventoLogica
     {
         private EventoDAO EventoDAO = new EventoDAO();
 
