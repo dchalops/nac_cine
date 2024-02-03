@@ -25,6 +25,7 @@ namespace clinica_presentacion_windows
 
         }
         public void CargarDatos()
+
         {
             try
             {
