@@ -20,13 +20,6 @@ namespace Cine_logica_negocio
         public int InsertarInventario_Asientos(inventario_asientos inventario_asientos)
         {
 
-
-
-
-
-
-
-
             inventario_asientosDAO.InsertarInventarioAsientos(inventario_asientos);
             DataTable resultado = inventario_asientosDAO.BuscarInventarioAsientos(inventario_asientos.estado_asiento);
             return int.Parse(resultado.Rows[0]["id_inventario"].ToString());

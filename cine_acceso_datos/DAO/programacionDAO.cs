@@ -14,13 +14,16 @@ namespace cine_acceso_datos.DAO
         private ConexionDB conexionDB = new ConexionDB();
         SqlCommand ejecutarConsulta = new SqlCommand();
         SqlDataReader ejecutarSql;
+        SqlDataReader leer;
+        SqlCommand comando = new SqlCommand();
+        DataTable tabla = new DataTable();
         //crud
         public void InsertarProgramacion(programacion nuevaProgramacion)
         {
             ejecutarConsulta.Connection = conexionDB.AbrirConexion();
             try
             {
-                ejecutarConsulta.CommandText = "insert into programacion(id_programacion,id_sala,id_pelicula,Fecha_hora_proyeccion,Estado_logico)" + "values('" + nuevaProgramacion.fecha_hora_proyeccion + "','" + nuevaProgramacion.estado_logico  + ")";
+                ejecutarConsulta.CommandText = "INSERT INTO programacion(id_programacion,id_sala,id_pelicula,Fecha_hora_proyeccion,Estado_logico)" + "values('" + nuevaProgramacion.fecha_hora_proyeccion + "','" + nuevaProgramacion.estado_logico  + ")";
                 ejecutarConsulta.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }

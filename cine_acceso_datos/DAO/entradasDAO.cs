@@ -14,13 +14,16 @@ namespace cine_acceso_datos.DAO
         private ConexionDB conexionDB = new ConexionDB();
         SqlCommand ejecutarConsulta = new SqlCommand();
         SqlDataReader ejecutarSql;
+        SqlDataReader leer;
+        SqlCommand comando = new SqlCommand();
+        DataTable tabla = new DataTable();
         //crud
         public void InsertarEntradas(entradas nuevaEntrada)
         {
             ejecutarConsulta.Connection = conexionDB.AbrirConexion();
             try
             {
-                ejecutarConsulta.CommandText = "insert into entradas(id_entrada,id_cliente,id_programacion,Asiento,Codigo_compra,Estado_logico)" + "values('" + nuevaEntrada.asiento + "','" + nuevaEntrada.codigo_compra + "','" + "','" + nuevaEntrada.estado_logico +")";
+                ejecutarConsulta.CommandText = "INSERT INTO entradas(id_entrada,id_cliente,id_programacion,Asiento,Codigo_compra,Estado_logico)" + "values('" + nuevaEntrada.asiento + "','" + nuevaEntrada.codigo_compra + "','" + "','" + nuevaEntrada.estado_logico +")";
                 ejecutarConsulta.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }

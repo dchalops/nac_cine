@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace cine_logica_negocio
 {
-    internal class programacionLogica
+    public class programacionLogica
     {
         private programacionDAO ProgramacionDao = new programacionDAO();
-        public int InsertarProgramacion(programacion programacion)
+        public Boolean InsertarProgramacion(programacion nuevoprogramacion)
         {
-            ProgramacionDao.InsertarProgramacion(programacion);
-            DataTable resultado = ProgramacionDao.BuscarProgramacionF(programacion.fecha_hora_proyeccion);
-            return int.Parse(resultado.Rows[0]["id_programacion"].ToString());
+            ProgramacionDao.InsertarProgramacion(nuevoprogramacion);
+            DataTable resultado = ProgramacionDao.BuscarProgramacionF(nuevoprogramacion.fecha_hora_proyeccion);
+            return Boolean.Parse(resultado.Rows[0]["id_programacion"].ToString());
         }
         public DataTable ListarProgramacion()
         {

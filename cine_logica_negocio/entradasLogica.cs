@@ -12,11 +12,11 @@ namespace cine_logica_negocio
     public class entradasLogica
     {
         private entradasDAO EntradasDao = new entradasDAO();
-        public int InsertarEntradas(entradas entradas)
+        public Boolean InsertarEntradas(entradas nuevaentradas)
         {
-            EntradasDao.InsertarEntradas(entradas);
-            DataTable resultado = EntradasDao.BuscarEntradasC(entradas.codigo_compra);
-            return int.Parse(resultado.Rows[0]["id_entradas"].ToString());
+            EntradasDao.InsertarEntradas(nuevaentradas);
+            DataTable resultado = EntradasDao.BuscarEntradasC(nuevaentradas.codigo_compra);
+            return Boolean.Parse(resultado.Rows[0]["id_entradas"].ToString());
         }
         public DataTable ListarEntradas()
         {

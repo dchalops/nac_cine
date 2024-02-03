@@ -14,13 +14,17 @@ namespace cine_acceso_datos.DAO
         private ConexionDB conexionDB = new ConexionDB();
         SqlCommand ejecutarConsulta = new SqlCommand();
         SqlDataReader ejecutarSql;
+        SqlDataReader leer;
+        SqlCommand comando = new SqlCommand();
+        DataTable tabla = new DataTable();
         //crud
         public void InsertarClientes(Clientes nuevoCliente)
         {
             ejecutarConsulta.Connection = conexionDB.AbrirConexion();
+
             try
             {
-                ejecutarConsulta.CommandText = "insert into Clientes(id_cliente,Doc_identidad,Nombre,Apellido,Email,Telefono)" + "values('" + nuevoCliente.doc_identidad + "','" + nuevoCliente.nombre + "','" + "','" + nuevoCliente.apellido + "','" + nuevoCliente.email + "','" + nuevoCliente.telefono + ")";
+                ejecutarConsulta.CommandText = "INSERT INTO Clientes(id_cliente,Doc_identidad,Nombre,Apellido,Email,Telefono)" + "values('" + nuevoCliente.doc_identidad + "','" + nuevoCliente.nombre + "','" + "','" + nuevoCliente.apellido + "','" + nuevoCliente.email + "','" + nuevoCliente.telefono + ")";
                 ejecutarConsulta.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             } catch (Exception ex)
