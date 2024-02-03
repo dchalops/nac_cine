@@ -12,6 +12,7 @@ namespace cine_acceso_datos.DAO
 {
     public class DireccionesDAO
     {
+
         private ConexionDB conexionDB = new ConexionDB();
         SqlCommand ejecutarSql = new SqlCommand();
         SqlDataReader transaccion;

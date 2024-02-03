@@ -72,6 +72,7 @@ namespace clinica_presentacion_windows
         private void button1_Click(object sender, EventArgs e)
         {
             Direcciones Dir = new Direcciones();
+
             Dir.Show();
             this.Hide();
         }

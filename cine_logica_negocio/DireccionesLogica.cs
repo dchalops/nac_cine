@@ -13,6 +13,7 @@ namespace Cine_logica_negocio
     {
         private DireccionesDAO direccionesDAO = new DireccionesDAO();
         
+
         public int InsertarDirecciones (direcciones direcciones)
         {
             direccionesDAO.InsertarDirecciones(direcciones);

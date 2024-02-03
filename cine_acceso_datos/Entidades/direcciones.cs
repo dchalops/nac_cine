@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cine_acceso_datos.Entidades
 {
+
     public class direcciones
     {
         public string id_direccion { get; set; }

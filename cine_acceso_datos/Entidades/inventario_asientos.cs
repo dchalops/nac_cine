@@ -8,6 +8,7 @@ namespace cine_acceso_datos.Entidades
 {
     public class inventario_asientos
     {
+
         public int id_inventario { get; set; }
         public int id_sala { get; set; }
         public int id_programacion { get; set; }
