@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asientos.Designer.cs">
+      <DependentUpon>Asientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Direcciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Direcciones.Designer.cs">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacturaAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Asientos.resx">
+      <DependentUpon>Asientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Direcciones.resx">
+      <DependentUpon>Direcciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FacturaAgregar.resx">
       <DependentUpon>FacturaAgregar.cs</DependentUpon>
     </EmbeddedResource>
