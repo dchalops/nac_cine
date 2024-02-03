@@ -10,7 +10,7 @@ namespace cine_acceso_datos
     public class ConexionDB
     {
 
-        private SqlConnection connection = new SqlConnection("Server=LAPTOP-6C7I42BM; DataBase=Cine; Integrated Security=true");
+        private SqlConnection connection = new SqlConnection("Server=RAGNAROK; DataBase=Cine; Integrated Security=true");
 
         public SqlConnection AbrirConexion()
         {

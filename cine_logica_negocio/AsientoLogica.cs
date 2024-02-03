@@ -13,6 +13,7 @@ namespace cine_logica_negocio
         {
             try
             {
+
                 asientoDAO.InsertarAsiento(nuevoAsiento);
                 return true;
             }
