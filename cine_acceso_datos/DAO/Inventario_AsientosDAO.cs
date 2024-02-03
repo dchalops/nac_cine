@@ -20,7 +20,14 @@ namespace cine_acceso_datos.DAO
             ejecutarSql.Connection = conexionDB.AbrirConexion();
             try
             {
-                ejecutarSql.CommandText = "insert into inventario_asientos (id_sala, id_programacion, id_asiento, estado_asiento, estado_logico)" + "values('" + nuevoInventarioAsientos.id_sala + "','" + nuevoInventarioAsientos.id_programacion + "','" + nuevoInventarioAsientos.id_asiento + "','" + nuevoInventarioAsientos.estado_asiento + "','" + nuevoInventarioAsientos.fecha + nuevoInventarioAsientos.estado_logico + ejecutarSql.ExecuteNonQuery();
+                ejecutarSql.CommandText = "INSERTinsert into inventario_asientos (id_sala, id_programacion, id_asiento, estado_asiento, fecha, estado_logico) VALUES (@id_sala, @id_programacion, @id_asiento, @estado_asiento, @fecha, @estado_logico)";
+                ejecutarSql.Parameters.AddWithValue("@id_sala", nuevoInventarioAsientos.id_sala);
+                ejecutarSql.Parameters.AddWithValue("@id_programacion", nuevoInventarioAsientos.id_programacion);
+                ejecutarSql.Parameters.AddWithValue("@id_asiento", nuevoInventarioAsientos.id_asiento);
+                ejecutarSql.Parameters.AddWithValue("@estado_asiento", nuevoInventarioAsientos.estado_asiento);
+                ejecutarSql.Parameters.AddWithValue("@fecha", nuevoInventarioAsientos.fecha);
+                ejecutarSql.Parameters.AddWithValue("@estado_logico", nuevoInventarioAsientos.estado_logico);
+                ejecutarSql.ExecuteNonQuery();
                 conexionDB.CerrarConexion();
             }
             catch (Exception ex)

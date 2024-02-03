@@ -14,7 +14,7 @@ namespace cine_acceso_datos.Entidades
         public int id_asiento { get; set; }
         public string estado_asiento { get; set; }
         public DateTime fecha { get; set; }
-        public string estado_logico { get; set; }
+        public int estado_logico { get; set; }
 
     }
 }

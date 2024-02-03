@@ -52,6 +52,7 @@
     <Compile Include="Asientos.Designer.cs">
       <DependentUpon>Asientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="asientosinventario.cs" />
     <Compile Include="Direcciones.cs">
       <SubType>Form</SubType>
     </Compile>
