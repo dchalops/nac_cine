@@ -20,7 +20,6 @@ namespace clinica_presentacion_windows
             InitializeComponent();
             asientosLogica = new Inventario_AsientosLogica();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
