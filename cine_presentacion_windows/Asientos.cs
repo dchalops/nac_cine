@@ -37,7 +37,6 @@ namespace clinica_presentacion_windows
                 MessageBox.Show("Error al cargar las facturas: " + ex.Message);
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             inventario_asientos nuevoasiento = new inventario_asientos();
