@@ -13,14 +13,12 @@ namespace cine_acceso_datos.Entidades
         public string apellido { get; set; }
         public string email { get; set; }
         public string telefono { get; set; }
-<<<<<<< Updated upstream
-=======
         public bool estado { get; set; }
         public string doc_identidad { get; set; }
         public string NombreCompleto
         {
             get { return nombre + " " + apellido; }
         }
->>>>>>> Stashed changes
+
     }
 }

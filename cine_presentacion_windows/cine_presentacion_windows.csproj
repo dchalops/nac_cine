@@ -58,6 +58,24 @@
     <Compile Include="Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMetodoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMetodoPago.designer.cs">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmpeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmpeliculas.designer.cs">
+      <DependentUpon>frmpeliculas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockPeliculas.designer.cs">
+      <DependentUpon>frmStockPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm\FrmAsientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +119,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Facturas.resx">
       <DependentUpon>Facturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMetodoPago.resx">
+      <DependentUpon>frmMetodoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmpeliculas.resx">
+      <DependentUpon>frmpeliculas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockPeliculas.resx">
+      <DependentUpon>frmStockPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm\FrmAsientos.resx">
       <DependentUpon>FrmAsientos.cs</DependentUpon>
